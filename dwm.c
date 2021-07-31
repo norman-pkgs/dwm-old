@@ -290,6 +290,7 @@ static void expose(XEvent *e);
 static void focus(Client *c);
 static void focusin(XEvent *e);
 static void focusmon(const Arg *arg);
+static void focustagmon(const Arg *arg);
 static void focusstack(const Arg *arg);
 static Atom getatomprop(Client *c, Atom prop);
 static int getrootptr(int *x, int *y);
@@ -1131,6 +1132,12 @@ focusmon(const Arg *arg)
 	selmon = m;
 	focus(NULL);
 	warp(selmon->sel);
+}
+
+void
+focustagmon(const Arg *arg) {
+    tagmon(arg);
+    focusmon(arg);
 }
 
 void

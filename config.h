@@ -206,7 +206,7 @@ static const Layout layouts[] = {
 
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -219,10 +219,18 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, NULL };     ■ Use of un
+static const char *dmenucmd[] = {
+    "dmenu_run",
+    "-fn", dmenufont,
+    "-nb", normbgcolor,
+    "-nf", normfgcolor,
+    "-sb", selbgcolor,
+    "-sf", selfgcolor,
+    NULL
+};
 
-static const char *dmenuinsertcmd[] = { "insert", NULL };     ■ Use of undeclared identi
-static const char *dmenuoutputcmd[] = { "output-menu", NULL };     ■ Use of undeclared i
+static const char *dmenuinsertcmd[] = { "insert", NULL };
+static const char *dmenuoutputcmd[] = { "output-menu", NULL };
 
 static const char *browsercmd[] = { "google-chrome-stable", NULL };
 
