@@ -68,8 +68,8 @@ static char urgbordercolor[]             = "#ff0000";
 static char urgfloatcolor[]              = "#db8fd9";
 
 
-static const unsigned int baralpha = 0xd0;
-static const unsigned int borderalpha = OPAQUE;
+static const unsigned int baralpha = 80;
+static const unsigned int borderalpha = 80;
 static const unsigned int alphas[][3] = {
 	/*                       fg      bg        border     */
 	[SchemeNorm]         = { OPAQUE, baralpha, borderalpha },
@@ -221,7 +221,6 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = {
     "dmenu_run",
-    "-fn", dmenufont,
     "-nb", normbgcolor,
     "-nf", normfgcolor,
     "-sb", selbgcolor,
