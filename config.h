@@ -18,9 +18,9 @@ static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 
 static const char *fonts[]          = {
-   "LiterationMono Nerd Font:pixelsize=14:antialias=true:autohint=true",
+   "LiterationMono Nerd Font:pixelsize=12:antialias=true:autohint=true",
    "JoyPixels:pixelsize=12:antialias=true:autohint=true",
-   "Latin Modern Math:pixelsize=14:antialias=true:autohint=true",
+   "Latin Modern Math:pixelsize=12:antialias=true:autohint=true",
 };
 
 static const char dmenufont[]            = "monospace:size=10";
