@@ -18,8 +18,6 @@ static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 0;   /* 0 means bottom bar */
 /* Indicators: see patch/bar_indicators.h for options */
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
-static int tiledindicatortype            = INDICATOR_NONE;
-static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 
 static const char *fonts[]          = {
    "LiterationMono Nerd Font:pixelsize=14:antialias=true:autohint=true",
