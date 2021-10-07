@@ -230,22 +230,19 @@ static const char *dmenucmd[] = {
     NULL
 };
 
-static const char *dmenuinsertcmd[] = { "insert", NULL };
-static const char *dmenuoutputcmd[] = { "output-menu", NULL };
+static const char *termcmd[]  = { "st", NULL };
+
+static const char *dmenuinsertcmd[] = { "dmenu-insert", NULL };
+static const char *dmenuoutputcmd[] = { "dmenu-output", NULL };
 
 static const char *browsercmd[] = { "google-chrome-stable", NULL };
-
-static const char *termcmd[]  = { "st", NULL };
-static const char *htopcmd[]  = { "st", "htop", NULL };
-static const char *mailcmd[]  = { "st", "neomutt", NULL };
-static const char *rangercmd[]  = { "st", "ranger", NULL };
 
 static const char *eclipsecmd[] = { "eclipse", NULL };
 
 static const char *discordcmd[] = { "discord", NULL };
 static const char *spotifycmd[] = { "spotify", NULL };
 
-
+#include <X11/XF86keysym.h>
 
 static Key keys[] = {
 	/* modifier                     key            function                argument */
@@ -255,10 +252,23 @@ static Key keys[] = {
     { MODKEY,                       XK_o,      spawn,          {.v = dmenuoutputcmd } },
     
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_m,      spawn,          {.v = mailcmd } },
-    { MODKEY,                       XK_b,      spawn,          {.v = htopcmd } },
-    { MODKEY,                       XK_r,      spawn,          {.v = rangercmd } },
     
+    // Volume keys
+    { MODKEY|ShiftMask,             XK_comma,  spawn,          SHCMD("volume -d 5") },
+    { MODKEY|ShiftMask,             XK_period, spawn,          SHCMD("volume -i 5") },
+
+    { 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("volume -i 5") },
+    { 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("volume -d 5") },
+    { 0,              XF86XK_AudioMute,        spawn,          SHCMD("volume -m") },
+
+    { 0,              XF86XK_AudioPlay,        spawn,          SHCMD("mpris-ctl --player active pp") },
+    { 0,              XF86XK_AudioStop,        spawn,          SHCMD("mpris-ctl pause") },
+    { 0,              XF86XK_AudioNext,        spawn,          SHCMD("mpris-ctl --player active next") },
+    { 0,              XF86XK_AudioPrev,        spawn,          SHCMD("mpris-ctl --player active prev") },
+
+    { 0,              XF86XK_MonBrightnessUp,  spawn,          SHCMD("brightness -i 5") },
+    { 0,              XF86XK_MonBrightnessDown,spawn,          SHCMD("brightness -d 5") },
+
     { MODKEY,                       XK_c,      spawn,          {.v = browsercmd } },
     { MODKEY,                       XK_e,      spawn,          {.v = eclipsecmd } },
     { MODKEY,                       XK_s,      spawn,          {.v = spotifycmd } },
@@ -285,10 +295,6 @@ static Key keys[] = {
     { MODKEY,                       XK_comma,  spawn,          SHCMD("mpris-ctl --player active prev") },
     { MODKEY,                       XK_period, spawn,          SHCMD("mpris-ctl --player active pp") },
     { MODKEY,                       XK_slash,  spawn,          SHCMD("mpris-ctl --player active next") },
-    
-    // Volume keys
-    { MODKEY|ShiftMask,             XK_comma,  spawn,          SHCMD("pamixer -d 5 && xroot-status-update") },
-    { MODKEY|ShiftMask,             XK_period, spawn,          SHCMD("pamixer -i 5 && xroot-status-update") },
 
 	TAGKEYS(                        XK_1,                                  0)
 	TAGKEYS(                        XK_2,                                  1)
