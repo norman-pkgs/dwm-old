@@ -6,7 +6,7 @@ static const int corner_radius           = 0;
 static const unsigned int snap           = 8;  /* snap pixel */
 static const int swallowfloating         = 1;   /* 1 means swallow floating windows by default */
 
-static const unsigned int gapall         = 16;
+static const unsigned int gapall         = 8;
 
 static const unsigned int gappih         = gapall;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = gapall;  /* vert inner gap between windows */
@@ -20,10 +20,16 @@ static const int topbar                  = 0;   /* 0 means bottom bar */
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 
 static const char *fonts[]          = {
-   "LiterationMono Nerd Font:pixelsize=20:antialias=true:autohint=true",
-   "JoyPixels:pixelsize=18:antialias=true:autohint=true",
-   "Latin Modern Math:pixelsize=18:antialias=true:autohint=true",
+   "LiterationMono Nerd Font:pixelsize=14:antialias=true:autohint=true",
+   "JoyPixels:pixelsize=12:antialias=true:autohint=true",
+   "Latin Modern Math:pixelsize=12:antialias=true:autohint=true",
 };
+
+//static const char *fonts[]          = {
+//   "LiterationMono Nerd Font:pixelsize=20:antialias=true:autohint=true",
+//   "JoyPixels:pixelsize=18:antialias=true:autohint=true",
+//   "Latin Modern Math:pixelsize=18:antialias=true:autohint=true",
+//};
 
 static const char dmenufont[]            = "monospace:size=10";
 
@@ -101,7 +107,7 @@ static char *colors[][ColCount] = {
 
 
 static const char *const autostart[] = {
-	"zsh", "-c", "/home/konsta/.config/init/init.sh", NULL,
+	"zsh", "-c", "/home/$USERNAME/.config/init/init.sh", NULL,
 	NULL /* terminate */
 };
 
@@ -236,6 +242,10 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *dmenuinsertcmd[] = { "dmenu-insert", NULL };
 static const char *dmenuoutputcmd[] = { "dmenu-output", NULL };
 
+static const char *dmenurestartcmd[] = { "dmenu-restart", NULL };
+
+static const char *dmenupowercmd[] = { "dmenu-power", NULL };
+
 static const char *browsercmd[] = { "google-chrome-stable", NULL };
 
 static const char *eclipsecmd[] = { "eclipse", NULL };
@@ -251,6 +261,10 @@ static Key keys[] = {
     
     { MODKEY,                       XK_i,      spawn,          {.v = dmenuinsertcmd } },
     { MODKEY,                       XK_o,      spawn,          {.v = dmenuoutputcmd } },
+
+    { MODKEY,                       XK_r,      spawn,          {.v = dmenurestartcmd } },
+
+    { MODKEY,                       XK_F4,      spawn,          {.v = dmenupowercmd } },
     
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     
