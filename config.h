@@ -6,8 +6,8 @@ static const int corner_radius           = 0;
 static const unsigned int snap           = 8;  /* snap pixel */
 static const int swallowfloating         = 1;   /* 1 means swallow floating windows by default */
 
-static const unsigned int gapall         = 8;
-//static const unsigned int gapall         = 16;
+//static const unsigned int gapall         = 8;
+static const unsigned int gapall         = 16;
 
 static const unsigned int gappih         = gapall;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = gapall;  /* vert inner gap between windows */
@@ -20,17 +20,17 @@ static const int topbar                  = 0;   /* 0 means bottom bar */
 /* Indicators: see patch/bar_indicators.h for options */
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 
-static const char *fonts[]          = {
-   "LiterationMono Nerd Font:pixelsize=14:antialias=true:autohint=true",
-   "JoyPixels:pixelsize=12:antialias=true:autohint=true",
-   "Latin Modern Math:pixelsize=12:antialias=true:autohint=true",
-};
-
 //static const char *fonts[]          = {
-//   "LiterationMono Nerd Font:pixelsize=20:antialias=true:autohint=true",
-//   "JoyPixels:pixelsize=18:antialias=true:autohint=true",
-//   "Latin Modern Math:pixelsize=18:antialias=true:autohint=true",
+//   "LiterationMono Nerd Font:pixelsize=14:antialias=true:autohint=true",
+//   "JoyPixels:pixelsize=12:antialias=true:autohint=true",
+//   "Latin Modern Math:pixelsize=12:antialias=true:autohint=true",
 //};
+
+static const char *fonts[]          = {
+   "LiterationMono Nerd Font:pixelsize=20:antialias=true:autohint=true",
+   "JoyPixels:pixelsize=18:antialias=true:autohint=true",
+   "Latin Modern Math:pixelsize=18:antialias=true:autohint=true",
+};
 
 static const char dmenufont[]            = "monospace:size=10";
 
@@ -231,10 +231,6 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = {
     "dmenu_run",
-    "-nb", normbgcolor,
-    "-nf", normfgcolor,
-    "-sb", selbgcolor,
-    "-sf", selfgcolor,
     NULL
 };
 
