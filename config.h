@@ -20,17 +20,17 @@ static const int topbar                  = 0;   /* 0 means bottom bar */
 /* Indicators: see patch/bar_indicators.h for options */
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 
-//static const char *fonts[]          = {
-//   "LiterationMono Nerd Font:pixelsize=14:antialias=true:autohint=true",
-//   "JoyPixels:pixelsize=12:antialias=true:autohint=true",
-//   "Latin Modern Math:pixelsize=12:antialias=true:autohint=true",
-//};
-
 static const char *fonts[]          = {
-   "LiterationMono Nerd Font:pixelsize=20:antialias=true:autohint=true",
-   "JoyPixels:pixelsize=18:antialias=true:autohint=true",
-   "Latin Modern Math:pixelsize=18:antialias=true:autohint=true",
+   "LiterationMono Nerd Font:pixelsize=14:antialias=true:autohint=true",
+   "JoyPixels:pixelsize=12:antialias=true:autohint=true",
+   "Latin Modern Math:pixelsize=12:antialias=true:autohint=true",
 };
+
+//static const char *fonts[]          = {
+//   "LiterationMono Nerd Font:pixelsize=20:antialias=true:autohint=true",
+//   "JoyPixels:pixelsize=18:antialias=true:autohint=true",
+//   "Latin Modern Math:pixelsize=18:antialias=true:autohint=true",
+//};
 
 static const char dmenufont[]            = "monospace:size=10";
 
