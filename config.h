@@ -26,7 +26,7 @@ static const char *fonts[]          = {
    "JoyPixels:pixelsize=12:antialias=true:autohint=true",
    "Latin Modern Math:pixelsize=12:antialias=true:autohint=true",
 };
-#elif
+#elif laptop
 static const char *fonts[]          = {
    "LiterationMono Nerd Font:pixelsize=20:antialias=true:autohint=true",
    "JoyPixels:pixelsize=18:antialias=true:autohint=true",
