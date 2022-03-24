@@ -80,8 +80,8 @@ static char urgbordercolor[]             = "#ff0000";
 static char urgfloatcolor[]              = "#db8fd9";
 
 
-static const unsigned int baralpha = 80;
-static const unsigned int borderalpha = 80;
+static const unsigned int baralpha = 95;
+static const unsigned int borderalpha = 95;
 static const unsigned int alphas[][3] = {
 	/*                       fg      bg        border     */
 	[SchemeNorm]         = { OPAQUE, baralpha, borderalpha },
@@ -260,16 +260,16 @@ static const char *spotifycmd[] = { "spotify", NULL };
 static Key keys[] = {
 	/* modifier                     key            function                argument */
     { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
-    
+
     { MODKEY,                       XK_i,      spawn,          {.v = dmenuinsertcmd } },
     { MODKEY,                       XK_o,      spawn,          {.v = dmenuoutputcmd } },
 
     { MODKEY,                       XK_r,      spawn,          {.v = dmenurestartcmd } },
 
     { MODKEY,                       XK_F4,      spawn,          {.v = dmenupowercmd } },
-    
+
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    
+
     // Volume keys
     { MODKEY|ShiftMask,             XK_comma,  spawn,          SHCMD("volume -d 5") },
     { MODKEY|ShiftMask,             XK_period, spawn,          SHCMD("volume -i 5") },
@@ -279,6 +279,7 @@ static Key keys[] = {
     { 0,              XF86XK_AudioMute,        spawn,          SHCMD("volume -m") },
 
     { 0,              XF86XK_AudioPlay,        spawn,          SHCMD("mpris-ctl --player active pp") },
+    { 0,              XF86XK_AudioPause,       spawn,          SHCMD("mpris-ctl --player active pp") },
     { 0,              XF86XK_AudioStop,        spawn,          SHCMD("mpris-ctl pause") },
     { 0,              XF86XK_AudioNext,        spawn,          SHCMD("mpris-ctl --player active next") },
     { 0,              XF86XK_AudioPrev,        spawn,          SHCMD("mpris-ctl --player active prev") },
@@ -290,24 +291,24 @@ static Key keys[] = {
     { MODKEY,                       XK_e,      spawn,          {.v = eclipsecmd } },
     { MODKEY,                       XK_s,      spawn,          {.v = spotifycmd } },
     { MODKEY,                       XK_d,      spawn,          {.v = discordcmd } },
-    
+
     { MODKEY,                       XK_f,      togglebar,      {0} },
-    
+
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-    
+
     { MODKEY,                       XK_p,      zoom,           {0} },
     { MODKEY,                       XK_Tab,    view,           {0} },
-    
+
     { MODKEY|ShiftMask,             XK_c,      quit,           {0} },
     { MODKEY,                       XK_q,      killclient,     {0} },
-    
+
     { MODKEY,                       XK_h,      focusmon,       {.i = -1 } },
     { MODKEY,                       XK_l,      focusmon,       {.i = +1 } },
-    
+
     { MODKEY|ShiftMask,             XK_h,      focustagmon,    {.i = -1 } },
     { MODKEY|ShiftMask,             XK_l,      focustagmon,    {.i = +1 } },
-    
+
     // Music keys
     { MODKEY,                       XK_comma,  spawn,          SHCMD("mpris-ctl --player active prev") },
     { MODKEY,                       XK_period, spawn,          SHCMD("mpris-ctl --player active pp") },
@@ -341,6 +342,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
 };
-
-
-
