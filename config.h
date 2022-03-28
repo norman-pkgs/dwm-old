@@ -244,6 +244,8 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *dmenuinsertcmd[] = { "dmenu-insert", NULL };
 static const char *dmenuoutputcmd[] = { "dmenu-output", NULL };
 
+static const char *dmenubluetoothcmd[] = { "st -e bluetooth", NULL };
+
 static const char *dmenurestartcmd[] = { "dmenu-restart", NULL };
 
 static const char *dmenupowercmd[] = { "dmenu-power", NULL };
@@ -263,6 +265,8 @@ static Key keys[] = {
 
     { MODKEY,                       XK_i,      spawn,          {.v = dmenuinsertcmd } },
     { MODKEY,                       XK_o,      spawn,          {.v = dmenuoutputcmd } },
+
+    { MODKEY,                       XK_b,      spawn,          {.v = dmenubluetoothcmd } },
 
     { MODKEY,                       XK_r,      spawn,          {.v = dmenurestartcmd } },
 
