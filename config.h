@@ -6,8 +6,11 @@ static const int corner_radius           = 0;
 static const unsigned int snap           = 8;  /* snap pixel */
 static const int swallowfloating         = 1;   /* 1 means swallow floating windows by default */
 
-//static const unsigned int gapall         = 8;
+#ifdef desktop
+static const unsigned int gapall         = 8;
+#elif laptop
 static const unsigned int gapall         = 16;
+#endif
 
 static const unsigned int gappih         = gapall;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = gapall;  /* vert inner gap between windows */
