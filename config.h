@@ -244,7 +244,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *dmenuinsertcmd[] = { "dmenu-insert", NULL };
 static const char *dmenuoutputcmd[] = { "dmenu-output", NULL };
 
-static const char *dmenubluetoothcmd[] = { "st -e bluetooth", NULL };
+static const char *dmenubluetoothcmd[] = { "st", "-e", "bluetooth", NULL };
 
 static const char *dmenurestartcmd[] = { "dmenu-restart", NULL };
 
