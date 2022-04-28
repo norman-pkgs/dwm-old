@@ -237,12 +237,12 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = {
-    "dmenu_run",
-    NULL
-};
+static const char *dmenucmd[] = { "dmenu_run", NULL };
+static const char *sudodmenucmd[] = { "sudo", "dmenu_run", NULL };
 
 static const char *termcmd[]  = { "st", NULL };
+
+static const char *dmenuappimagecmd[] = { "dmenu-appimage", NULL };
 
 static const char *dmenuinsertcmd[] = { "dmenu-insert", NULL };
 static const char *dmenuoutputcmd[] = { "dmenu-output", NULL };
@@ -265,6 +265,9 @@ static const char *spotifycmd[] = { "spotify", NULL };
 static Key keys[] = {
 	/* modifier                     key            function                argument */
     { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
+    { MODKEY|ShiftMask,             XK_space,  spawn,          {.v = sudodmenucmd } },
+
+    { MODKEY,                       XK_a,      spawn,          {.v = dmenuappimagecmd } },
 
     { MODKEY,                       XK_i,      spawn,          {.v = dmenuinsertcmd } },
     { MODKEY,                       XK_o,      spawn,          {.v = dmenuoutputcmd } },
