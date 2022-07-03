@@ -183,10 +183,13 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.title = "st", .isterminal = 1)
+	RULE(.title = "multimc", .isterminal = 0)
+	RULE(.title = "MultiMC", .isterminal = 0)
+	RULE(.title = "MultiMC 5", .isterminal = 0)
+	RULE(.title = "MultiMC 5 - Version 0.6.16-custom — MultiMC 5", .isterminal = 0)
 	RULE(.title = "Chrome", .isterminal = 0)
 	RULE(.title = "chrome", .isterminal = 0)
-	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "Firefox", .tags = 1 << 7)
+	RULE(.title = "chrome", .isterminal = 0)
 };
 
 
