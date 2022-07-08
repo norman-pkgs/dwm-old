@@ -279,7 +279,7 @@ static Key keys[] = {
 
     { MODKEY,                       XK_r,      spawn,          {.v = dmenurestartcmd } },
 
-    { MODKEY,                       XK_F4,      spawn,          {.v = dmenupowercmd } },
+    { MODKEY,                       XK_F4,     spawn,          {.v = dmenupowercmd } },
 
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
@@ -291,8 +291,8 @@ static Key keys[] = {
     { 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("volume -d 5") },
     { 0,              XF86XK_AudioMute,        spawn,          SHCMD("volume -m") },
 
-    { 0,              XF86XK_AudioPlay,        spawn,          SHCMD("mpris-ctl --player active pp") },
-    { 0,              XF86XK_AudioPause,       spawn,          SHCMD("mpris-ctl --player active pp") },
+    { 0,              XF86XK_AudioPlay,        spawn,          SHCMD("mpris-ctl pp") },
+    { 0,              XF86XK_AudioPause,       spawn,          SHCMD("mpris-ctl pp") },
     { 0,              XF86XK_AudioStop,        spawn,          SHCMD("mpris-ctl pause") },
     { 0,              XF86XK_AudioNext,        spawn,          SHCMD("mpris-ctl --player active next") },
     { 0,              XF86XK_AudioPrev,        spawn,          SHCMD("mpris-ctl --player active prev") },
