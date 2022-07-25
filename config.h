@@ -256,7 +256,7 @@ static const char *dmenurestartcmd[] = { "dmenu-restart", NULL };
 
 static const char *dmenupowercmd[] = { "dmenu-power", NULL };
 
-static const char *browsercmd[] = { "google-chrome-stable", NULL };
+static const char *browsercmd[] = { "chrome", NULL };
 
 static const char *eclipsecmd[] = { "eclipse", NULL };
 
