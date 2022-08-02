@@ -182,7 +182,13 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.title = "st", .isterminal = 1)
+#ifdef desktop
+    RULE(.title = "Discord", .monitor = 0)
+    RULE(.title = "Spotify", .monitor = 3, .tags = 1 << 1)
+    RULE(.title = "Entertainment", .monitor = 3)
+    RULE(.title = "qBittorrent", .monitor = 3, .tags = 1 << 8)
+#endif
+    RULE(.title = "st", .isterminal = 1)
 	RULE(.title = "multimc", .isterminal = 0)
 	RULE(.title = "MultiMC", .isterminal = 0)
 	RULE(.title = "MultiMC 5", .isterminal = 0)
