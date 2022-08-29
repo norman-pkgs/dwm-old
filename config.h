@@ -184,15 +184,17 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 #ifdef desktop
     RULE(.title = "Discord", .monitor = 0)
-    RULE(.title = "Spotify", .monitor = 3, .tags = 1 << 1)
+
+    RULE(.class = "spotify", .monitor = 3, .tags = 1 << 1)
+    RULE(.class = "Spotify", .monitor = 3, .tags = 1 << 1)
+
     RULE(.title = "Entertainment", .monitor = 3)
     RULE(.title = "qBittorrent", .monitor = 3, .tags = 1 << 8)
 #endif
-    RULE(.title = "st", .isterminal = 1)
-	RULE(.title = "multimc", .isterminal = 0)
-	RULE(.title = "MultiMC", .isterminal = 0)
-	RULE(.title = "MultiMC 5", .isterminal = 0)
-	RULE(.title = "MultiMC 5 - Version 0.6.16-custom — MultiMC 5", .isterminal = 0)
+    RULE(.class = "st", .isterminal = 1)
+    RULE(.class = "St", .isterminal = 1)
+
+	RULE(.class = "MultiMC 5 - Version 0.6.16-custom", .isterminal = 0)
 	RULE(.title = "Chrome", .isterminal = 0)
 	RULE(.title = "chrome", .isterminal = 0)
 	RULE(.title = "chrome", .isterminal = 0)
@@ -264,6 +266,8 @@ static const char *dmenupowercmd[] = { "dmenu-power", NULL };
 
 static const char *browsercmd[] = { "chrome", NULL };
 
+static const char *wallpapercmd[] = { "wallpaper-window", NULL };
+
 static const char *eclipsecmd[] = { "eclipse", NULL };
 
 static const char *discordcmd[] = { "discord", NULL };
@@ -307,6 +311,7 @@ static Key keys[] = {
     { 0,              XF86XK_MonBrightnessDown,spawn,          SHCMD("brightness -d 5") },
 
     { MODKEY,                       XK_c,      spawn,          {.v = browsercmd } },
+    { MODKEY,                       XK_w,      spawn,          {.v = wallpapercmd } },
     { MODKEY,                       XK_e,      spawn,          {.v = eclipsecmd } },
     { MODKEY,                       XK_s,      spawn,          {.v = spotifycmd } },
     { MODKEY,                       XK_d,      spawn,          {.v = discordcmd } },
@@ -327,7 +332,7 @@ static Key keys[] = {
 
     { MODKEY|ShiftMask,             XK_h,      focustagmon,    {.i = -1 } },
     { MODKEY|ShiftMask,             XK_l,      focustagmon,    {.i = +1 } },
-
+    
     // Music keys
     { MODKEY,                       XK_comma,  spawn,          SHCMD("mpris-ctl --player active prev") },
     { MODKEY,                       XK_period, spawn,          SHCMD("mpris-ctl --player active pp") },
