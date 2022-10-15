@@ -86,36 +86,36 @@ static char urgfloatcolor[]              = "#db8fd9";
 static const unsigned int baralpha = 95;
 static const unsigned int borderalpha = 95;
 static const unsigned int alphas[][3] = {
-	/*                       fg      bg        border     */
-	[SchemeNorm]         = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]          = { OPAQUE, baralpha, borderalpha },
-	[SchemeTitleNorm]    = { OPAQUE, baralpha, borderalpha },
-	[SchemeTitleSel]     = { OPAQUE, baralpha, borderalpha },
-	[SchemeTagsNorm]     = { OPAQUE, baralpha, borderalpha },
-	[SchemeTagsSel]      = { OPAQUE, baralpha, borderalpha },
-	[SchemeHidNorm]      = { OPAQUE, baralpha, borderalpha },
-	[SchemeHidSel]       = { OPAQUE, baralpha, borderalpha },
-	[SchemeUrg]          = { OPAQUE, baralpha, borderalpha },
+    /*                       fg      bg        border     */
+    [SchemeNorm]         = { OPAQUE, baralpha, borderalpha },
+    [SchemeSel]          = { OPAQUE, baralpha, borderalpha },
+    [SchemeTitleNorm]    = { OPAQUE, baralpha, borderalpha },
+    [SchemeTitleSel]     = { OPAQUE, baralpha, borderalpha },
+    [SchemeTagsNorm]     = { OPAQUE, baralpha, borderalpha },
+    [SchemeTagsSel]      = { OPAQUE, baralpha, borderalpha },
+    [SchemeHidNorm]      = { OPAQUE, baralpha, borderalpha },
+    [SchemeHidSel]       = { OPAQUE, baralpha, borderalpha },
+    [SchemeUrg]          = { OPAQUE, baralpha, borderalpha },
 };
 
 static char *colors[][ColCount] = {
-	/*                       fg                bg                border                float */
-	[SchemeNorm]         = { normfgcolor,      normbgcolor,      normbordercolor,      normfloatcolor },
-	[SchemeSel]          = { selfgcolor,       selbgcolor,       selbordercolor,       selfloatcolor },
-	[SchemeTitleNorm]    = { titlenormfgcolor, titlenormbgcolor, titlenormbordercolor, titlenormfloatcolor },
-	[SchemeTitleSel]     = { titleselfgcolor,  titleselbgcolor,  titleselbordercolor,  titleselfloatcolor },
-	[SchemeTagsNorm]     = { tagsnormfgcolor,  tagsnormbgcolor,  tagsnormbordercolor,  tagsnormfloatcolor },
-	[SchemeTagsSel]      = { tagsselfgcolor,   tagsselbgcolor,   tagsselbordercolor,   tagsselfloatcolor },
-	[SchemeHidNorm]      = { hidnormfgcolor,   hidnormbgcolor,   c000000,              c000000 },
-	[SchemeHidSel]       = { hidselfgcolor,    hidselbgcolor,    c000000,              c000000 },
-	[SchemeUrg]          = { urgfgcolor,       urgbgcolor,       urgbordercolor,       urgfloatcolor },
+    /*                       fg                bg                border                float */
+    [SchemeNorm]         = { normfgcolor,      normbgcolor,      normbordercolor,      normfloatcolor },
+    [SchemeSel]          = { selfgcolor,       selbgcolor,       selbordercolor,       selfloatcolor },
+    [SchemeTitleNorm]    = { titlenormfgcolor, titlenormbgcolor, titlenormbordercolor, titlenormfloatcolor },
+    [SchemeTitleSel]     = { titleselfgcolor,  titleselbgcolor,  titleselbordercolor,  titleselfloatcolor },
+    [SchemeTagsNorm]     = { tagsnormfgcolor,  tagsnormbgcolor,  tagsnormbordercolor,  tagsnormfloatcolor },
+    [SchemeTagsSel]      = { tagsselfgcolor,   tagsselbgcolor,   tagsselbordercolor,   tagsselfloatcolor },
+    [SchemeHidNorm]      = { hidnormfgcolor,   hidnormbgcolor,   c000000,              c000000 },
+    [SchemeHidSel]       = { hidselfgcolor,    hidselbgcolor,    c000000,              c000000 },
+    [SchemeUrg]          = { urgfgcolor,       urgbgcolor,       urgbordercolor,       urgfloatcolor },
 };
 
 
 
 static const char *const autostart[] = {
-	"zsh", "-c", "/home/$USERNAME/.config/init/init.sh", NULL,
-	NULL /* terminate */
+    "zsh", "-c", "/home/$USERNAME/.config/init/init.sh", NULL,
+    NULL /* terminate */
 };
 
 
@@ -147,9 +147,9 @@ static const char *const autostart[] = {
  * them. This works seamlessly with alternative tags and alttagsdecoration patches.
  */
 static char *tagicons[][NUMTAGS] = {
-	[DEFAULT_TAGS]        = { "一", "二", "三", "四", "五", "六", "セ", "八", "九" },
-	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
-	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
+    [DEFAULT_TAGS]        = { "一", "二", "三", "四", "五", "六", "セ", "八", "九" },
+    [ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
+    [ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
 
 
@@ -172,17 +172,19 @@ static char *tagicons[][NUMTAGS] = {
  * the patches you enable.
  */
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 *	WM_WINDOW_ROLE(STRING) = role
-	 *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
-	 */
-	RULE(.wintype = WTYPE "DIALOG", .isfloating = 1)
-	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
-	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
-	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
+    /* xprop(1):
+     *  WM_CLASS(STRING) = instance, class
+     *  WM_NAME(STRING) = title
+     *  WM_WINDOW_ROLE(STRING) = role
+     *  _NET_WM_WINDOW_TYPE(ATOM) = wintype
+     */
+    RULE(.wintype = WTYPE "DIALOG", .isfloating = 1)
+    RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
+    RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
+    RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 #ifdef desktop
+    RULE(.class = "Firefox", .monitor = 1)
+
     RULE(.title = "Discord", .monitor = 0)
 
     RULE(.class = "spotify", .monitor = 3, .tags = 1 << 1)
@@ -194,10 +196,10 @@ static const Rule rules[] = {
     RULE(.class = "st", .isterminal = 1)
     RULE(.class = "St", .isterminal = 1)
 
-	RULE(.class = "MultiMC 5 - Version 0.6.16-custom", .isterminal = 0)
-	RULE(.title = "Chrome", .isterminal = 0)
-	RULE(.title = "chrome", .isterminal = 0)
-	RULE(.title = "chrome", .isterminal = 0)
+    RULE(.class = "MultiMC 5 - Version 0.6.16-custom", .isterminal = 0)
+    RULE(.title = "Chrome", .isterminal = 0)
+    RULE(.title = "chrome", .isterminal = 0)
+    RULE(.title = "chrome", .isterminal = 0)
 };
 
 
@@ -215,10 +217,10 @@ static const Rule rules[] = {
  *    name - does nothing, intended for visual clue and for logging / debugging
  */
 static const BarRule barrules[] = {
-	/* monitor  bar    alignment         widthfunc                drawfunc                clickfunc                name */
-	{ -1,       0,     BAR_ALIGN_LEFT,   width_tags,              draw_tags,              click_tags,              "tags" },
-	{ -1,       0,     BAR_ALIGN_LEFT,   width_ltsymbol,          draw_ltsymbol,          click_ltsymbol,          "layout" },
-	{ 'A',      0,     BAR_ALIGN_RIGHT,  width_status,            draw_status,            click_status,            "status" },
+    /* monitor  bar    alignment         widthfunc                drawfunc                clickfunc                name */
+    { -1,       0,     BAR_ALIGN_LEFT,   width_tags,              draw_tags,              click_tags,              "tags" },
+    { -1,       0,     BAR_ALIGN_LEFT,   width_ltsymbol,          draw_ltsymbol,          click_ltsymbol,          "layout" },
+    { 'A',      0,     BAR_ALIGN_RIGHT,  width_status,            draw_status,            click_status,            "status" },
 };
 
 /* layout(s) */
@@ -229,18 +231,18 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "",      tile },    /* first entry is default */
+    /* symbol     arrange function */
+    { "",      tile },    /* first entry is default */
 };
 
 
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+    { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+    { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+    { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+    { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 
 
@@ -276,7 +278,7 @@ static const char *spotifycmd[] = { "spotify", NULL };
 #include <X11/XF86keysym.h>
 
 static Key keys[] = {
-	/* modifier                     key            function                argument */
+    /* modifier                     key            function                argument */
     { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
     { MODKEY|ShiftMask,             XK_space,  spawn,          {.v = sudodmenucmd } },
 
@@ -332,37 +334,37 @@ static Key keys[] = {
 
     { MODKEY|ShiftMask,             XK_h,      focustagmon,    {.i = -1 } },
     { MODKEY|ShiftMask,             XK_l,      focustagmon,    {.i = +1 } },
-    
+
     // Music keys
     { MODKEY,                       XK_comma,  spawn,          SHCMD("mpris-ctl --player active prev") },
     { MODKEY,                       XK_period, spawn,          SHCMD("mpris-ctl --player active pp") },
     { MODKEY,                       XK_slash,  spawn,          SHCMD("mpris-ctl --player active next") },
 
-	TAGKEYS(                        XK_1,                                  0)
-	TAGKEYS(                        XK_2,                                  1)
-	TAGKEYS(                        XK_3,                                  2)
-	TAGKEYS(                        XK_4,                                  3)
-	TAGKEYS(                        XK_5,                                  4)
-	TAGKEYS(                        XK_6,                                  5)
-	TAGKEYS(                        XK_7,                                  6)
-	TAGKEYS(                        XK_8,                                  7)
-	TAGKEYS(                        XK_9,                                  8)
+    TAGKEYS(                        XK_1,                                  0)
+    TAGKEYS(                        XK_2,                                  1)
+    TAGKEYS(                        XK_3,                                  2)
+    TAGKEYS(                        XK_4,                                  3)
+    TAGKEYS(                        XK_5,                                  4)
+    TAGKEYS(                        XK_6,                                  5)
+    TAGKEYS(                        XK_7,                                  6)
+    TAGKEYS(                        XK_8,                                  7)
+    TAGKEYS(                        XK_9,                                  8)
 };
 
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
-	/* click                event mask           button          function        argument */
-	{ ClkLtSymbol,          0,                   Button1,        setlayout,      {0} },
-	{ ClkLtSymbol,          0,                   Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkWinTitle,          0,                   Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,                   Button2,        spawn,          {.v = termcmd } },
-	{ ClkClientWin,         MODKEY,              Button1,        movemouse,      {0} },
-	{ ClkClientWin,         MODKEY,              Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,              Button3,        resizemouse,    {0} },
-	{ ClkTagBar,            0,                   Button1,        view,           {0} },
-	{ ClkTagBar,            0,                   Button3,        toggleview,     {0} },
-	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
+    /* click                event mask           button          function        argument */
+    { ClkLtSymbol,          0,                   Button1,        setlayout,      {0} },
+    { ClkLtSymbol,          0,                   Button3,        setlayout,      {.v = &layouts[2]} },
+    { ClkWinTitle,          0,                   Button2,        zoom,           {0} },
+    { ClkStatusText,        0,                   Button2,        spawn,          {.v = termcmd } },
+    { ClkClientWin,         MODKEY,              Button1,        movemouse,      {0} },
+    { ClkClientWin,         MODKEY,              Button2,        togglefloating, {0} },
+    { ClkClientWin,         MODKEY,              Button3,        resizemouse,    {0} },
+    { ClkTagBar,            0,                   Button1,        view,           {0} },
+    { ClkTagBar,            0,                   Button3,        toggleview,     {0} },
+    { ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
+    { ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
 };
