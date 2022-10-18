@@ -21,7 +21,7 @@ static const int smartgaps_fact          = 1;   /* gap factor when there is only
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 0;   /* 0 means bottom bar */
 /* Indicators: see patch/bar_indicators.h for options */
-static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
+static int tagindicatortype              = INDICATOR_TOP_LEFT_LARGER_SQUARE;
 
 #ifdef desktop
 static const char *fonts[]          = {
@@ -183,7 +183,9 @@ static const Rule rules[] = {
     RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
     RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 #ifdef desktop
-    RULE(.class = "Firefox", .monitor = 1)
+    RULE(.class = "firefox", .monitor = 1)
+
+    RULE(.title = "Sqlectron", .monitor = 1, .tags = 1 << 1)
 
     RULE(.title = "Discord", .monitor = 0)
 
